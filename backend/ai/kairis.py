@@ -61,3 +61,63 @@ def responder(pregunta: str):
         return "Una dieta es el conjunto de alimentos y bebidas que una persona consume regularmente. Puede referirse a un plan específico de alimentación diseñado para alcanzar ciertos objetivos de salud, como perder peso, ganar masa muscular o mejorar la salud en general. Las dietas pueden variar ampliamente en términos de los tipos de alimentos permitidos, las cantidades y las restricciones. Es importante elegir una dieta equilibrada y sostenible que se adapte a tus necesidades individuales y preferencias alimentarias. Quieres que te de ejemplos de dietas populares?"
     
     return "Lo lamento, sigue adquiriendo mas conocimientos para estar mejor preparado para la proxima vez que nos veamos"
+def calcular_calorias(peso):
+
+    # cálculo básico para estudiantes
+    mantenimiento = peso * 30
+
+    return mantenimiento
+
+
+def generar_dieta(calorias):
+
+    desayuno = "Avena con leche + 1 plátano + 1 huevo"
+    comida = "150g pollo + 1 taza arroz + verduras"
+    cena = "Ensalada con atún + 2 tostadas integrales"
+
+    return f"""
+Dieta ejemplo ({calorias} kcal aprox):
+
+Desayuno
+{desayuno}
+
+Comida
+{comida}
+
+Cena
+{cena}
+"""
+
+
+def responder(pregunta: str):
+
+    texto = pregunta.lower()
+
+    if "hola" in texto:
+        return "Hola, soy Kairis. Puedo ayudarte con nutrición o generar dietas básicas."
+
+    if "calorias" in texto:
+        return "Las calorías son la energía que aportan los alimentos al cuerpo."
+
+    if "proteina" in texto:
+        return "Las proteínas ayudan al crecimiento y reparación de tejidos."
+
+    if "dieta" in texto:
+        return "Para generar una dieta escribe: dieta 70 (donde 70 es tu peso en kg)"
+
+    # generar dieta
+    if "dieta" in texto:
+
+        partes = texto.split()
+
+        for palabra in partes:
+
+            if palabra.isdigit():
+
+                peso = int(palabra)
+
+                calorias = calcular_calorias(peso)
+
+                return generar_dieta(calorias)
+
+    return "Aún estoy aprendiendo. Pregúntame sobre nutrición o dietas."
