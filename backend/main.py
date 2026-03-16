@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from backend.ai.kairis import responder
+from ai.kairis import responder
+
 
 app = FastAPI()
 
