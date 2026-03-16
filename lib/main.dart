@@ -2,13 +2,28 @@ import 'package:flutter/material.dart';
 import 'submodulos.dart';
 import 'splash_screen.dart';
 import 'kairis_page.dart';
+import 'service/kairis_service.dart'; // NUEVO
 
 void main() {
   runApp(const NustrakApp());
 }
 
-class NustrakApp extends StatelessWidget {
+class NustrakApp extends StatefulWidget {
   const NustrakApp({super.key});
+
+  @override
+  State<NustrakApp> createState() => _NustrakAppState();
+}
+
+class _NustrakAppState extends State<NustrakApp> {
+
+  @override
+  void initState() {
+    super.initState();
+
+    /// Despierta el servidor de Kairis en Render
+    despertarKairis();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -172,7 +187,7 @@ class _SemestreCard extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
-            color: Colors.grey.shade400,
+            color: Colors.grey,
             width: 1,
           ),
         ),

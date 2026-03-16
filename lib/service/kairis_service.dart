@@ -3,44 +3,45 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-/// Detecta la URL correcta según el dispositivo
+/// URL base del backend
 String getBaseUrl() {
-
-  if (kIsWeb) {
-    return "http://localhost:8001";
-  }
-
-  if (Platform.isAndroid) {
-    return "http://10.0.2.2:8001";
-  }
-
-  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    return "http://127.0.0.1:8001";
-  }
-
-  if (Platform.isIOS) {
-    return "http://localhost:8001";
-  }
-
-  return "http://127.0.0.1:8001";
+  return "https://nustrak.onrender.com";
 }
 
+/// Despierta el servidor en Render
+Future<void> despertarKairis() async {
+  try {
+    await http.get(
+      Uri.parse(getBaseUrl()),
+    );
+  } catch (e) {
+    print("Kairis aún está despertando...");
+  }
+}
+
+/// Enviar pregunta a Kairis
 Future<String> preguntarKairis(String pregunta) async {
 
   final url = Uri.parse("${getBaseUrl()}/kairis");
 
-  final response = await http.post(
-    url,
-    headers: {"Content-Type": "application/json"},
-    body: jsonEncode({
-      "pregunta": pregunta
-    }),
-  );
+  try {
 
-  if (response.statusCode == 200) {
-    final data = jsonDecode(response.body);
-    return data["respuesta"];
-  } else {
-    return "Error al conectar con Kairis";
+    final response = await http.post(
+      url,
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode({
+        "pregunta": pregunta
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      return data["respuesta"];
+    } else {
+      return "Kairis no pudo responder en este momento.";
+    }
+
+  } catch (e) {
+    return "No se pudo conectar con Kairis.";
   }
 }
