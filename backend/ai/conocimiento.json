@@ -1,0 +1,22 @@
+{
+  "saludo": {
+    "palabras": ["hola", "buenas", "saludos"],
+    "respuesta": "Hola, soy Kairis. Tu asistente virtual de nutrición."
+  },
+  "calorias": {
+    "palabras": ["caloria", "calorias", "energia"],
+    "respuesta": "Las calorías representan la energía que aportan los alimentos al cuerpo y que se utiliza para funciones vitales y actividad física."
+  },
+  "proteinas": {
+    "palabras": ["proteina", "proteinas", "aminoacidos"],
+    "respuesta": "Las proteínas son macronutrientes formados por aminoácidos que ayudan al crecimiento y reparación de los tejidos del cuerpo."
+  },
+  "dieta": {
+    "palabras": ["dieta", "alimentacion"],
+    "respuesta": "Una dieta es el conjunto de alimentos y bebidas que una persona consume diariamente."
+  },
+  "gracias": {
+    "palabras": ["gracias", "agradecido"],
+    "respuesta": "De nada. Estoy aquí para ayudarte."
+  }
+}

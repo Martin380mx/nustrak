@@ -1,8 +1,7 @@
-import random
+import json
 
 def calcular_calorias(peso):
-    mantenimiento = peso * 30
-    return mantenimiento
+    return peso * 30
 
 
 def generar_dieta(calorias):
@@ -25,45 +24,39 @@ Cena
 """
 
 
+# cargar conocimiento
+with open("conocimiento.json", "r", encoding="utf-8") as f:
+    conocimiento = json.load(f)
+
+
 def responder(pregunta: str):
 
-    texto = pregunta.lower().strip()
+    texto = pregunta.lower()
 
-    # saludo
-    if "hola" in texto or "buenas" in texto:
-        return "Hola soy Kairis, tu asistente virtual de nutrición."
+    for tema in conocimiento:
 
-    # calorías
-    if "caloria" in texto:
-        return "Las calorías representan la energía que aportan los alimentos al cuerpo y que este utiliza para sus funciones vitales."
+        palabras = conocimiento[tema]["palabras"]
 
-    # proteínas
-    if "proteina" in texto:
-        return "Las proteínas ayudan al crecimiento, reparación y mantenimiento de los tejidos del cuerpo."
+        for palabra in palabras:
 
-    # agradecimiento
-    if "gracias" in texto:
-        return "De nada, estoy aquí para ayudarte."
+            if palabra in texto:
 
-    # explicación de dieta
-    if "que es una dieta" in texto or "dieta que es" in texto:
-        return "Una dieta es el conjunto de alimentos y bebidas que una persona consume diariamente para mantener su salud y energía."
+                if palabra == "dieta":
 
-    # generar dieta
-    if "dieta" in texto:
+                    partes = texto.split()
 
-        partes = texto.split()
+                    for p in partes:
 
-        for palabra in partes:
+                        if p.isdigit():
 
-            if palabra.isdigit():
+                            peso = int(p)
 
-                peso = int(palabra)
+                            calorias = calcular_calorias(peso)
 
-                calorias = calcular_calorias(peso)
+                            return generar_dieta(calorias)
 
-                return generar_dieta(calorias)
+                    return "Para generar una dieta escribe: dieta 70 (donde 70 es tu peso en kg)."
 
-        return "Para generar una dieta escribe por ejemplo: dieta 70 (donde 70 es tu peso en kg)."
+                return conocimiento[tema]["respuesta"]
 
-    return "Aún estoy aprendiendo. Pregúntame sobre calorías, proteínas o dietas."
+    return "Aún estoy aprendiendo. Pregúntame sobre nutrición, calorías o dietas."
