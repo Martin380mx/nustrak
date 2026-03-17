@@ -1,11 +1,16 @@
-import os
 import json
+import os
+import wikipedia
+import openai
+
+wikipedia.set_lang("es")
 
 BASE_DIR = os.path.dirname(__file__)
 ruta = os.path.join(BASE_DIR, "conocimiento.json")
 
 with open(ruta, "r", encoding="utf-8") as f:
     conocimiento = json.load(f)
+
 
 def calcular_calorias(peso):
     return peso * 30
@@ -31,9 +36,13 @@ Cena
 """
 
 
-# cargar conocimiento
-with open("conocimiento.json", "r", encoding="utf-8") as f:
-    conocimiento = json.load(f)
+def buscar_wikipedia(pregunta):
+
+    try:
+        resultado = wikipedia.summary(pregunta, sentences=2)
+        return resultado
+    except:
+        return None
 
 
 def responder(pregunta: str):
@@ -66,4 +75,10 @@ def responder(pregunta: str):
 
                 return conocimiento[tema]["respuesta"]
 
-    return "Aún estoy aprendiendo. Pregúntame sobre nutrición, calorías o dietas."
+    # 🔎 buscar en wikipedia si no sabe
+    respuesta = buscar_wikipedia(pregunta)
+
+    if respuesta:
+        return respuesta
+
+    return "Aún estoy aprendiendo. Intenta preguntarme sobre nutrición."
