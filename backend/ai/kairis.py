@@ -1,5 +1,11 @@
 import json
+import os
 
+ruta = os.path.join(os.path.dirname(__file__), "conocimiento.json")
+
+with open(ruta, "r", encoding="utf-8") as f:
+    conocimiento = json.load(f)
+    
 def calcular_calorias(peso):
     return peso * 30
 
