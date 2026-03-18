@@ -93,7 +93,7 @@ class NutrientesPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            /// INTRODUCCION
+          
             tarjetaTitulo("¿Qué son los nutrientes?"),
 
             tarjetaContenido(
@@ -104,7 +104,7 @@ class NutrientesPage extends StatelessWidget {
               "fortalecer el sistema inmunológico."
             ),
 
-            /// FUNCIONES
+          
             tarjetaLista(
               "Funciones principales",
               [
@@ -118,7 +118,7 @@ class NutrientesPage extends StatelessWidget {
               const Color(0xFFE3F2FD),
             ),
 
-            /// CLASIFICACION
+            
             tarjetaTitulo("Clasificación de los nutrientes"),
 
             tarjetaContenido(
@@ -147,7 +147,7 @@ class NutrientesPage extends StatelessWidget {
               const Color(0xFFFFF3E0),
             ),
 
-            /// EJEMPLOS
+          
             tarjetaLista(
               "Ejemplos de alimentos con nutrientes",
               [
@@ -160,7 +160,7 @@ class NutrientesPage extends StatelessWidget {
               const Color(0xFFF3E5F5),
             ),
 
-            /// IMPORTANCIA
+           
             Container(
               padding: const EdgeInsets.all(18),
               margin: const EdgeInsets.only(top: 10),

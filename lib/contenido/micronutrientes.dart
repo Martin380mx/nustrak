@@ -97,7 +97,7 @@ class MicronutrientesPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            /// INTRODUCCIÓN
+          
             tarjetaTitulo("¿Qué son los micronutrientes?"),
 
             tarjetaContenido(
@@ -108,7 +108,7 @@ class MicronutrientesPage extends StatelessWidget {
               "para la salud, el crecimiento y el desarrollo del cuerpo."
             ),
 
-            /// TIPOS
+          
             tarjetaLista(
               "Tipos de micronutrientes",
               [
@@ -120,7 +120,18 @@ class MicronutrientesPage extends StatelessWidget {
               const Color(0xFFE3F2FD),
             ),
 
-            /// VITAMINAS
+              tarjetaLista(
+                "Funciones de los micronutrientes",
+                [
+                  "Fortalecer el sistema inmunológico",
+                  "Favorecer el crecimiento y desarrollo",
+                  "Reparar tejidos y células",
+                  "Regular procesos metabólicos",
+                  "Mantener el equilibrio del organismo"
+                ],
+                const Color(0xFFE8F5E9),
+            ),
+
             tarjetaLista(
               "Vitaminas importantes",
               [
@@ -134,7 +145,19 @@ class MicronutrientesPage extends StatelessWidget {
               const Color(0xFFE8F5E9),
             ),
 
-            /// MINERALES
+              tarjetaLista(
+                "Minerales esenciales",
+                [
+                  "Calcio → formación de huesos y dientes",
+                  "Hierro → transporte de oxígeno en la sangre",
+                  "Potasio → función muscular y nerviosa",
+                  "Magnesio → metabolismo celular",
+                  "Zinc → sistema inmunológico",
+                  "Sodio → equilibrio de líquidos"  
+                ],
+                const Color(0xFFFFF3E0),  
+            ),
+
             tarjetaLista(
               "Minerales esenciales",
               [
@@ -148,7 +171,7 @@ class MicronutrientesPage extends StatelessWidget {
               const Color(0xFFFFF3E0),
             ),
 
-            /// FUENTES
+           
             tarjetaLista(
               "Alimentos ricos en micronutrientes",
               [
@@ -162,7 +185,7 @@ class MicronutrientesPage extends StatelessWidget {
               const Color(0xFFF3E5F5),
             ),
 
-            /// IMPORTANCIA
+            
             Container(
               padding: const EdgeInsets.all(18),
               margin: const EdgeInsets.only(top: 10),

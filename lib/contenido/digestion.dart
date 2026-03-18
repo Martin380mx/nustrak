@@ -97,7 +97,7 @@ class DigestionPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            /// INTRODUCCION
+            
             tarjetaTitulo("¿Qué es la digestión?"),
 
             tarjetaContenido(
@@ -107,7 +107,7 @@ class DigestionPage extends StatelessWidget {
               "organismo como nutrientes y energía."
             ),
 
-            /// ETAPAS
+           
             tarjetaLista(
               "Etapas del proceso digestivo",
               [
@@ -119,7 +119,7 @@ class DigestionPage extends StatelessWidget {
               const Color(0xFFE3F2FD),
             ),
 
-            /// ORGANOS
+           
             tarjetaLista(
               "Órganos del sistema digestivo",
               [
@@ -142,7 +142,7 @@ class DigestionPage extends StatelessWidget {
               const Color(0xFFFFF3E0),
             ),
 
-            /// IMPORTANCIA
+           
             tarjetaLista(
               "Importancia de la digestión",
               [
@@ -154,7 +154,7 @@ class DigestionPage extends StatelessWidget {
               const Color(0xFFF3E5F5),
             ),
 
-            /// RESUMEN
+            
             Container(
               padding: const EdgeInsets.all(18),
               margin: const EdgeInsets.only(top: 10),

@@ -101,7 +101,7 @@ class _KairisPageState extends State<KairisPage> {
       body: Column(
         children: [
 
-          /// CHAT
+          
           Expanded(
             child: ListView.builder(
               controller: _scrollController,
@@ -113,7 +113,7 @@ class _KairisPageState extends State<KairisPage> {
             ),
           ),
 
-          /// IA escribiendo
+          
           if(cargando)
           const Padding(
             padding: EdgeInsets.only(bottom: 8),
@@ -126,7 +126,6 @@ class _KairisPageState extends State<KairisPage> {
             ),
           ),
 
-          /// INPUT
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
             color: Colors.white,

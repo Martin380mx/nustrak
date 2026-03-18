@@ -97,7 +97,7 @@ class MetabolismoPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            /// INTRODUCCION
+            
             tarjetaTitulo("¿Qué es el metabolismo?"),
 
             tarjetaContenido(
@@ -108,7 +108,7 @@ class MetabolismoPage extends StatelessWidget {
               "realizar todas las funciones vitales."
             ),
 
-            /// FUNCIONES
+         
             tarjetaLista(
               "Funciones del metabolismo",
               [
@@ -121,7 +121,7 @@ class MetabolismoPage extends StatelessWidget {
               const Color(0xFFE3F2FD),
             ),
 
-            /// TIPOS
+           
             tarjetaLista(
               "Tipos de metabolismo",
               [
@@ -132,7 +132,7 @@ class MetabolismoPage extends StatelessWidget {
               const Color(0xFFE8F5E9),
             ),
 
-            /// FACTORES
+           
             tarjetaLista(
               "Factores que influyen en el metabolismo",
               [
@@ -146,7 +146,7 @@ class MetabolismoPage extends StatelessWidget {
               const Color(0xFFFFF3E0),
             ),
 
-            /// EJEMPLOS
+            
             tarjetaLista(
               "Ejemplos de procesos metabólicos",
               [
@@ -159,7 +159,7 @@ class MetabolismoPage extends StatelessWidget {
               const Color(0xFFF3E5F5),
             ),
 
-            /// IMPORTANCIA
+            
             Container(
               padding: const EdgeInsets.all(18),
               margin: const EdgeInsets.only(top: 10),

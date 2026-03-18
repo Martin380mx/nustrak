@@ -8,42 +8,137 @@ class HomeostasisPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Homeostasis"),
+        centerTitle: true,
         backgroundColor: const Color(0xFF2DD3A4),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(20),
-        child: SingleChildScrollView(
-          child: Text(
-"""
-La homeostasis es la capacidad del organismo para mantener condiciones internas estables a pesar de cambios en el entorno.
 
-El cuerpo humano regula constantemente:
-
-• Temperatura corporal
-• Nivel de glucosa en sangre
-• Presión arterial
-• Equilibrio de líquidos
-• pH sanguíneo
-
-Ejemplo de homeostasis:
-
-Cuando la temperatura corporal aumenta, el cuerpo produce sudor para enfriarse.
-
-Cuando la glucosa en sangre aumenta, el páncreas libera insulina para disminuirla.
-
-Sistemas que participan en la homeostasis:
-
-• Sistema nervioso
-• Sistema endocrino
-• Sistema circulatorio
-
-Importancia:
-
-La homeostasis permite que el organismo funcione correctamente y se adapte a los cambios del ambiente.
-""",
-            style: TextStyle(fontSize: 16),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xFFE8F5E9),
+              Color(0xFFB2DFDB),
+              Color(0xFF2DD3A4),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
           ),
         ),
+
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+
+             
+              _card(
+                icon: Icons.health_and_safety,
+                titulo: "¿Qué es la Homeostasis?",
+                contenido:
+                    "Es la capacidad del organismo para mantener condiciones internas estables a pesar de cambios en el entorno.",
+              ),
+
+            
+              _card(
+                icon: Icons.monitor_heart,
+                titulo: "¿Qué regula el cuerpo?",
+                contenido:
+                    "• Temperatura corporal\n"
+                    "• Nivel de glucosa en sangre\n"
+                    "• Presión arterial\n"
+                    "• Equilibrio de líquidos\n"
+                    "• pH sanguíneo",
+              ),
+
+              
+              _card(
+                icon: Icons.lightbulb,
+                titulo: "Ejemplos",
+                contenido:
+                    "• Cuando aumenta la temperatura, sudamos.\n"
+                    "• Cuando sube la glucosa, el cuerpo libera insulina.",
+              ),
+
+              
+              _card(
+                icon: Icons.settings_system_daydream,
+                titulo: "Sistemas involucrados",
+                contenido:
+                    "• Sistema nervioso\n"
+                    "• Sistema endocrino\n"
+                    "• Sistema circulatorio",
+              ),
+
+              
+              _card(
+                icon: Icons.star,
+                titulo: "Importancia",
+                contenido:
+                    "Permite que el organismo funcione correctamente y se adapte a los cambios del ambiente.",
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _card({
+    required IconData icon,
+    required String titulo,
+    required String contenido,
+  }) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 15),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.95),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.green.withOpacity(0.2),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          )
+        ],
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+
+        
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: const Color(0xFF2DD3A4).withOpacity(0.2),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Icon(icon, color: const Color(0xFF2DD3A4)),
+          ),
+
+          const SizedBox(width: 12),
+
+        
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  titulo,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  contenido,
+                  style: const TextStyle(fontSize: 14),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -21,7 +21,7 @@ class _NustrakAppState extends State<NustrakApp> {
   void initState() {
     super.initState();
 
-    /// Despierta el servidor de Kairis en Render
+   
     despertarKairis();
   }
 

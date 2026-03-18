@@ -97,7 +97,7 @@ class EnergiaAlimentariaPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            /// INTRODUCCIÓN
+           
             tarjetaTitulo("¿Qué es la energía alimentaria?"),
 
             tarjetaContenido(
@@ -108,7 +108,7 @@ class EnergiaAlimentariaPage extends StatelessWidget {
               "el funcionamiento de los órganos."
             ),
 
-            /// FUNCIONES
+           
             tarjetaLista(
               "¿Para qué se usa la energía?",
               [
@@ -121,7 +121,7 @@ class EnergiaAlimentariaPage extends StatelessWidget {
               const Color(0xFFE3F2FD),
             ),
 
-            /// MEDICION
+            
             tarjetaLista(
               "Unidad de medida",
               [
@@ -132,7 +132,7 @@ class EnergiaAlimentariaPage extends StatelessWidget {
               const Color(0xFFE8F5E9),
             ),
 
-            /// FUENTES
+            
             tarjetaLista(
               "Principales fuentes de energía",
               [
@@ -143,7 +143,7 @@ class EnergiaAlimentariaPage extends StatelessWidget {
               const Color(0xFFFFF3E0),
             ),
 
-            /// EJEMPLOS
+           
             tarjetaLista(
               "Ejemplos de alimentos energéticos",
               [
@@ -156,7 +156,7 @@ class EnergiaAlimentariaPage extends StatelessWidget {
               const Color(0xFFF3E5F5),
             ),
 
-            /// IMPORTANCIA
+            
             Container(
               padding: const EdgeInsets.all(18),
               margin: const EdgeInsets.only(top: 10),

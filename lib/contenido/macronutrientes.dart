@@ -97,7 +97,7 @@ class MacronutrientesPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            /// INTRODUCCIÓN
+          
             tarjetaTitulo("¿Qué son los macronutrientes?"),
 
             tarjetaContenido(
@@ -108,7 +108,7 @@ class MacronutrientesPage extends StatelessWidget {
               "sus actividades diarias."
             ),
 
-            /// TIPOS
+            
             tarjetaLista(
               "Tipos de macronutrientes",
               [
@@ -119,7 +119,7 @@ class MacronutrientesPage extends StatelessWidget {
               const Color(0xFFE3F2FD),
             ),
 
-            /// CARBOHIDRATOS
+           
             tarjetaLista(
               "Carbohidratos",
               [
@@ -131,7 +131,7 @@ class MacronutrientesPage extends StatelessWidget {
               const Color(0xFFE8F5E9),
             ),
 
-            /// PROTEINAS
+            
             tarjetaLista(
               "Proteínas",
               [
@@ -143,7 +143,7 @@ class MacronutrientesPage extends StatelessWidget {
               const Color(0xFFFFF3E0),
             ),
 
-            /// GRASAS
+            
             tarjetaLista(
               "Grasas",
               [
@@ -155,7 +155,7 @@ class MacronutrientesPage extends StatelessWidget {
               const Color(0xFFF3E5F5),
             ),
 
-            /// FUNCIONES
+           
             tarjetaLista(
               "Funciones principales",
               [
@@ -167,7 +167,7 @@ class MacronutrientesPage extends StatelessWidget {
               const Color(0xFFE1F5FE),
             ),
 
-            /// IMPORTANCIA
+           
             Container(
               padding: const EdgeInsets.all(18),
               margin: const EdgeInsets.only(top: 10),
